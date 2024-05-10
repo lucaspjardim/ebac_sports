@@ -15,7 +15,7 @@ export const paraReal = (valor: number) =>
     valor
   )
 
-const Produtos = ({ produto, estaNosFavoritos }: Props) => {
+const ProdutosComponent = ({ produto, estaNosFavoritos }: Props) => {
   const dispatch = useDispatch()
 
   const adicionarCarrinho = () => {
@@ -35,9 +35,7 @@ const Produtos = ({ produto, estaNosFavoritos }: Props) => {
         <strong>{paraReal(produto.preco)}</strong>
       </S.Prices>
       <S.BtnComprar onClick={adicionarFavoritos} type="button">
-        {estaNosFavoritos
-          ? '- Remover dos favoritos'
-          : '+ Adicionar aos favoritos'}
+        + Adicionar aos favoritos
       </S.BtnComprar>
       <S.BtnComprar onClick={adicionarCarrinho} type="button">
         Adicionar ao carrinho
@@ -46,4 +44,4 @@ const Produtos = ({ produto, estaNosFavoritos }: Props) => {
   )
 }
 
-export default Produtos
+export default ProdutosComponent
